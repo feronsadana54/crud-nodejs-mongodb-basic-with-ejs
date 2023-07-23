@@ -1,0 +1,29 @@
+<a href="/tambahData" class="btn btn-primary mt-3">Tambah Data</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Email</th>
+      <th scope="col">Alamat</th>
+      <th scope="col" class="text-center">Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% let nomor = 1 %> <% data.forEach(element => { %>
+    <tr>
+      <th scope="row"><%= nomor %></th>
+      <td><%= element.nama %></td>
+      <td><%= element.email %></td>
+      <td><%= element.alamat %></td>
+      <td>
+        <a href="detail/<%= element._id %>" class="btn btn-warning">Detail</a>
+      </td>
+      <td>
+        <a href="hapus/<%= element._id %>" class="btn btn-danger">Delete</a>
+      </td>
+      <% nomor++ %>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
